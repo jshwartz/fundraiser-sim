@@ -1,0 +1,66 @@
+<div class="ui raised segments">
+  <div class="ui segment">
+    <h2 class="ui left floated header"><span class="info-link" {{action 'setHelpText' "seed"}}>Seed</span> Round - <span class="info-link" {{action 'setHelpText' "safes"}}>Safes</span>
+    </h2>
+    <h2 class="ui right floated header">
+      <div class="ui large empty circular green label"></div>
+    </h2>
+    <div class="ui hidden clearing divider"></div>
+    {{#if isEditing}}
+    <form class="ui form" {{action "completeRound" on="submit"}}>
+      <div class="two fields">
+        <div class="field">
+          <label>Amount Raised</label>
+          <input type="number" placeholder="100,000">
+        </div>
+        <div class="field">
+          <label>Closing Date</label>
+          <input type="date" placeholder="">
+        </div>
+      </div>
+      <div class="two fields">
+        <div class="field">
+          <label><span class="info-link" {{action 'setHelpText' "valuation"}}>Valuation Cap</span></label>
+          <input type="number" placeholder="100,000">
+        </div>
+        <div class="field">
+          <label><span class="info-link" {{action 'setHelpText' "discount"}}>Discount Rate</span></label>
+          <input type="number" placeholder="15">
+        </div>
+      </div>
+      <button type="submit" class="ui right floated small basic submit button">Save Round</button>
+      <div class="clear-float"></div>
+    </form>
+    {{else}}
+      <div class="ui grid">
+        <div class="six wide column">
+          <table class="ui very basic table">
+            <tbody>
+              <tr>
+                <td>Amount Raised: $100,000</td>
+              </tr>
+              <tr>
+                <td>Closing Date: 12/21/2014</td>
+              </tr>
+              <tr>
+                <td><span class="info-link" {{action 'setHelpText' "valuation"}}>Valuation Cap</span>: $5,000,000</td>
+              </tr>
+              <tr>
+                <td><span class="info-link" {{action 'setHelpText' "discount"}}>Discount Rate</span>: 15%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ten wide column">
+          <div class="ui basic segment">
+            <em>Shares will issue on next conversion event. Before the conversion event, it is impossible to caculate.</em>
+          </div>
+          <button class="ui right floated small basic button" {{action 'editRound'}}>Edit Round</button>
+        </div>
+      </div>
+    {{/if}}
+  </div>
+  <div class="ui secondary segment">
+    <p>{{helpText}}</p>
+  </div>
+</div>

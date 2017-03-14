@@ -4,6 +4,17 @@ body {
   overflow: hidden;
 }
 
+.clear-float {
+  clear: both;
+}
+
+.info-link{
+  border-bottom-width: thin;
+  border-bottom-style: dashed;
+  border-bottom-color: #9b9b9b;
+  cursor: pointer;
+}
+
 //fundraise scss
 .scroll-column {
   height: 100vh;
