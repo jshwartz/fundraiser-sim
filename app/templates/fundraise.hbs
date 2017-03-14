@@ -1,0 +1,19 @@
+<div id="top-bar">{{top-bar}}</div>
+<div class="ui column grid scroll-grid">
+  <div class="six wide column scroll-column" id="left-scroll-area">
+    <div class="ui container">
+      <h1 class="ui center aligned header">{{model.name}}</h1>
+      {{cap-table company=model}}
+    </div>
+  </div>
+  <div class="ten wide column scroll-column" id="right-scroll-area">
+    <div class="ui container">
+      <div class="ui basic segment">
+        {{fundraising-rounds company=model}}
+      </div>
+      <div class="ui basic segment">
+        {{fundraising-menu company=model}}
+      </div>
+    </div>
+  </div>
+</div>

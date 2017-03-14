@@ -1,0 +1,45 @@
+@import "pod-styles";
+
+body {
+  overflow: hidden;
+}
+
+//fundraise scss
+.scroll-column {
+  height: 100vh;
+  overflow-y: hidden;
+
+}
+
+#top-bar {
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  padding: 0;
+  background-color: #009688;
+  -webkit-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.24);
+  -moz-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.24);
+  box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.24);
+  z-index: 2000;
+}
+
+.ui.grid.scroll-grid {
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+#left-scroll-area {
+  background-color: #f7f7f7;
+  z-index: 20;
+  padding: 20px;
+  padding-top: 30px;
+  margin-top: 50px;
+}
+
+#right-scroll-area {
+  z-index: 20;
+  padding: 20px;
+  padding-top: 18px;
+  margin-top: 50px;
+}

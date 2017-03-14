@@ -2,6 +2,8 @@
   "name": "fundraiser-sim",
   "dependencies": {
     "ember": "~2.9.0",
-    "ember-cli-shims": "0.1.3"
+    "ember-cli-shims": "0.1.3",
+    "semantic-ui": "^2.2.9",
+    "blob-polyfill": "^1.0.20150320"
   }
 }

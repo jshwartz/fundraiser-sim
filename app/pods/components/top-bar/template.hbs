@@ -1,0 +1,13 @@
+<div class="ui container">
+  <div class="ui small inverted right floated buttons">
+  <div class="ui button"><i class="smile icon"></i> Get Aquired / Go Public</div>
+    {{#ui-dropdown class="ui floating dropdown icon button" selected="Bob" onChange=(action (mut gender))}}
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <div class="item"><i class="smile icon"></i> Get Aquired / Go Public</div>
+        <div class="item"><i class="frown icon"></i> Go Out-of-Buisness</div>
+        <div class="item"><i class="plane icon"></i> Make Money, Cruise</div>
+      </div>
+    {{/ui-dropdown}}
+  </div>
+</div>

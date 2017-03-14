@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'fundraiser-sim',
+    podModulePrefix: 'fundraiser-sim/pods',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
