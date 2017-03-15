@@ -5,4 +5,6 @@
 {{!-- <div class="ui raise segment">
   Go Raise Some money
 </div> --}}
-{{safe-round}}
+{{#each company.investors as |investor|}}
+  {{safe-round investor=investor}}
+{{/each}}

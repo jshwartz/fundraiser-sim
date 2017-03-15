@@ -11,21 +11,21 @@
       <div class="two fields">
         <div class="field">
           <label>Amount Raised</label>
-          <input type="number" placeholder="100,000">
+          {{one-way-input changeset.amountRaised type="number" update=(action (mut changeset.amountRaised))}}
         </div>
         <div class="field">
           <label>Closing Date</label>
-          <input type="date" placeholder="">
+          {{one-way-input changeset.closingDate type="date" update=(action (mut changeset.closingDate))}}
         </div>
       </div>
       <div class="two fields">
         <div class="field">
           <label><span class="info-link" {{action 'setHelpText' "valuation"}}>Valuation Cap</span></label>
-          <input type="number" placeholder="100,000">
+          {{one-way-input changeset.valuationCap type="number" update=(action (mut changeset.valuationCap))}}
         </div>
         <div class="field">
           <label><span class="info-link" {{action 'setHelpText' "discount"}}>Discount Rate</span></label>
-          <input type="number" placeholder="15">
+          {{one-way-input changeset.discountRate type="number" update=(action (mut changeset.discountRate))}}
         </div>
       </div>
       <button type="submit" class="ui right floated small basic submit button">Save Round</button>
@@ -37,16 +37,16 @@
           <table class="ui very basic table">
             <tbody>
               <tr>
-                <td>Amount Raised: $100,000</td>
+                <td>Amount Raised: {{format-money investor.amountRaised precision=0}}</td>
               </tr>
               <tr>
-                <td>Closing Date: 12/21/2014</td>
+                <td>Closing Date: {{investor.closingDate}}</td>
               </tr>
               <tr>
-                <td><span class="info-link" {{action 'setHelpText' "valuation"}}>Valuation Cap</span>: $5,000,000</td>
+                <td><span class="info-link" {{action 'setHelpText' "valuation"}}>Valuation Cap</span>: {{format-money investor.valuationCap precision=0}}</td>
               </tr>
               <tr>
-                <td><span class="info-link" {{action 'setHelpText' "discount"}}>Discount Rate</span>: 15%</td>
+                <td><span class="info-link" {{action 'setHelpText' "discount"}}>Discount Rate</span>: {{investor.discountRate}}</td>
               </tr>
             </tbody>
           </table>
@@ -61,6 +61,7 @@
     {{/if}}
   </div>
   <div class="ui secondary segment">
+    <button class="ui right floated small basic button" {{action 'cancelEdit'}}>Cancel Edit</button>
     <p>{{helpText}}</p>
   </div>
 </div>

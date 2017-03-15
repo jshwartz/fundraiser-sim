@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import Changeset from 'ember-changeset';
 
 export default Ember.Component.extend({
   isEditing: true,
@@ -7,15 +8,24 @@ export default Ember.Component.extend({
   discountHelpText: "blee bloo blah discount rates",
   safesHelpText: "tool la ree Safes are cool",
   seedHelpText: "snoobly snoo Seed round",
+  changeset: null,
 
   init() {
     this._super(...arguments);
     this.set('helpText', this.get('seedHelpText'));
+    let investor = this.get('investor');
+    // let validator = this.get('validate');
+    this.changeset = new Changeset(investor);
   },
 
   actions: {
     completeRound() {
       this.set('isEditing', false);
+      return this.get('changeset').save();
+    },
+    cancelEdit() {
+      this.set('isEditing', false);
+      return this.get('changeset').rollback();
     },
     editRound() {
       this.set('isEditing', true);

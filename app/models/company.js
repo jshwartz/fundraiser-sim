@@ -4,10 +4,11 @@ import Ember from 'ember';
 const {
   Model,
   attr,
-  belongsTo
+  hasMany
 } = DS;
 
 export default DS.Model.extend({
+  investors: hasMany('investor', { async: true, dependent: 'destroy' }),
   name: attr('string'),
   founderShares: attr('number'),
   optionShares: attr('number'),
